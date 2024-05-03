@@ -7,7 +7,8 @@
           title="Read before use"
         >
           <v-card-text>
-            This tool is designed for bulk deletions when the action cannot be performed by date (found at the bottom of the store admin page). It's important to consider the API rate limit set by the merchant, which defaults to 60 per minute. If you're deleting multiple orders, it could strain resources and affect other merchants. In such cases, please delete orders in reasonable batches. For orders that fail to cancel, please refer to this <a href='https://shippit.atlassian.net/wiki/spaces/FUL/pages/2575564923/Deleting+cancelling+orders'>Confluence Article</a>
+            This tool is designed for bulk deletions when the action cannot be performed by date (found at the bottom of the store admin page). It's important to consider the API rate limit set by the merchant, which defaults to 60 per minute. If you're deleting multiple orders, it could strain resources and affect other merchants. In such cases, please delete orders in reasonable batches. For orders that fail to cancel, please refer to this <a href='https://shippit.atlassian.net/wiki/spaces/FUL/pages/2575564923/Deleting+cancelling+orders'>Confluence Article</a>.<br><br>
+            The CSV provided will take into account ONLY the header "order" expecting the shippit tracking number (starts with pp...).
           </v-card-text>
         </v-card>
       </v-col>
