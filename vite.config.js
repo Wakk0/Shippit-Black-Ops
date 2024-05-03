@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vuetify()
   ],
+  base: '/Shippit-Black-Ops/'
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
