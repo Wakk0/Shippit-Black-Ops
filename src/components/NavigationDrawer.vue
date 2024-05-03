@@ -2,7 +2,7 @@
     <v-navigation-drawer v-model="drawer">
         <v-sheet class="pa-4" color="purple-darken-4">
             <v-avatar class="mb-4" color="purple-darken-4" size="64">
-                <v-img src="src/assets/logo.png"></v-img>
+                <CompanyLogo />
             </v-avatar>
             <div>Shippit Black Ops</div>
         </v-sheet>
@@ -18,6 +18,7 @@
 
 <script setup>
     import { ref } from 'vue'
+    import CompanyLogo from '@/components/CompanyLogo.vue'
 
     const links = [
         ['mdi-home','Home','/'],
