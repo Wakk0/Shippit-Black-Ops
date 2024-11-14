@@ -23,8 +23,8 @@
     const links = [
         ['mdi-home','Home','/'],
         ['mdi-inbox-arrow-down', 'Bulk Deletion', '/bulkdelete'],
-        // ['mdi-send', 'Send'],
-        // ['mdi-delete', 'Trash'],
+        ['mdi-send', 'Auspost Ops', '/auspostops'],
+        // ['mdi-send', 'Form Test', '/formtest'],
         // ['mdi-alert-octagon', 'Spam'],
     ]
 

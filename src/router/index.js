@@ -13,6 +13,16 @@ const router = createRouter({
       path: '/bulkdelete',
       name: 'Bulk Delete',
       component: () => import('../views/BulkDelete.vue')
+    },
+    {
+      path: '/auspostops',
+      name: 'Auspost Ops',
+      component: () => import('../views/AuspostOps.vue')
+    },
+    {
+      path: '/formtest',
+      name: 'Form Test',
+      component: () => import('../views/FormTest.vue')
     }
   ]
 })

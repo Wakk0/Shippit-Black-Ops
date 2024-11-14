@@ -27,6 +27,11 @@ export default defineConfig({
         target: 'https://app.shippit.com/api/3',
         changeOrigin: true,
         rewrite: path => path.replace('/production','')
+      },
+      '/auspost/': {
+        target: 'https://digitalapi.auspost.com.au',
+        changeOrigin: true,
+        rewrite: path => path.replace('/auspost','')
       }
     }
   }
