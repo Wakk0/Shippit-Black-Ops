@@ -19,11 +19,11 @@ const router = createRouter({
       name: 'Auspost Ops',
       component: () => import('../views/AuspostOps.vue')
     },
-    {
-      path: '/formtest',
-      name: 'Form Test',
-      component: () => import('../views/FormTest.vue')
-    }
+    // {
+    //   path: '/formtest',
+    //   name: 'Form Test',
+    //   component: () => import('../views/FormTest.vue')
+    // }
   ]
 })
 
