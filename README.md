@@ -1,10 +1,10 @@
-# ShippitOps
+# Shippit Black Ops
 
-This template should help get you started developing with Vue 3 in Vite.
+URL in [GitHum Pages](https://wakk0.github.io/Shippit-Black-Ops//)
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VSCodium](https://vscodium.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
 ## Customize configuration
 
@@ -15,7 +15,6 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ```sh
 npm install
 ```
-
 ### Compile and Hot-Reload for Development
 
 ```sh
