@@ -176,6 +176,7 @@ const check_merchant = async () => {
     }).then((res) => res.json())
     merchant_info = response.response
     showStoreDetails.value = true
+    console.log(merchant_info)
   } else {
     SnackBarErrorMessage.value = 'Please select the environment or add the API key!'
     snackbar.value = true
