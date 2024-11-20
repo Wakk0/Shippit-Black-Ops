@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vuetify()
   ],
-  base: '/Shippit-Black-Ops/',
+  base: '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/Shippit-Black-Ops/staging/': {
+      '/staging/': {
         target: 'https://app.staging.shippit.com/api/3',
         changeOrigin: true,
         rewrite: path => path.replace('/staging','')
