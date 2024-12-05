@@ -69,19 +69,30 @@
                     <v-select v-model="product_id" label="Product Code" :items="product_codes" item-title="name" item-value="value" required/>
                   </v-col>
                 </v-row>
-                <!-- <div v-for="item in itemquantity"> -->
+                  <v-row v-for="(item, index) in items" :key="index">
+                    <v-col>
+                      <v-text-field v-model="item.length" label="Length (cm)" type="number" required />
+                    </v-col>
+                    <v-col>
+                      <v-text-field v-model="item.width" label="Width (cm)" type="number" required />
+                    </v-col>
+                    <v-col>
+                      <v-text-field v-model="item.height" label="Height (cm)" type="number" required />
+                    </v-col>
+                    <v-col>
+                      <v-text-field v-model="item.weight" label="Weight (kg)" type="number" required />
+                    </v-col>
+                    <v-col >
+                      <v-btn @click="delPackage(index)" color="red" class="mt-2" :disabled="index < 1">
+                        <v-icon  icon="mdi-delete-forever"></v-icon>
+                      </v-btn>
+                    </v-col>
+                  </v-row>
                   <v-row>
                     <v-col>
-                      <v-text-field v-model="items.length" label="Length (cm)" type="number" required />
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="items.width" label="Width (cm)" type="number" required />
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="items.height" label="Height (cm)" type="number" required />
-                    </v-col>
-                    <v-col>
-                      <v-text-field v-model="items.weight" label="Weight (kg)" type="number" required />
+                      <v-btn @click="addPackage" color="green" class="mt-2">
+                        <v-icon icon="mdi-plus"></v-icon>
+                      </v-btn>
                     </v-col>
                   </v-row>
                 <!-- </div> -->
@@ -110,13 +121,13 @@ import { ref, reactive } from 'vue'
 import VueJsonPretty from 'vue-json-pretty';
 import 'vue-json-pretty/lib/styles.css';
 
-let apiKey = ref()
-let password = ref()
-let account = ref()
+let apiKey = ref('870d063c-9821-4984-88ba-fefa8570cd6b')
+let password = ref('bG2AFOKjrvRcrBfcJA9b')
+let account = ref('0005012030')
 let account_info = ref('')
 let valid = ref(false)
 const tab = ref(null)
-let frompostcode = ref(4152)
+let frompostcode = ref()
 let fromsuburb = ref()
 let fromstate = ref()
 let topostcode = ref()
@@ -131,7 +142,9 @@ let width = ref('')
 let height = ref('')
 let weight = ref ('')
 // let items = ref([{length: 1, width: 1, height: 1, weight: 1, product_id: product_id}])
-let items = reactive({length, width, height, weight, product_id})
+let items = reactive([
+  { length: 0, width: 0, height: 0, weight: 0, product_id: product_id.value }
+])
 
 const check_account = async () => {
   if (account.value && apiKey.value && password.value) {
@@ -160,7 +173,7 @@ const check_quote = async () => {
     const body = {shipments: [
           { from: { postcode: frompostcode.value, suburb: fromsuburb.value, state: fromstate.value.toUpperCase()},
             to: { postcode: topostcode.value, suburb: tosuburb.value, state: tostate.value.toUpperCase()},
-            items: [{length: items.length, width: items.width, height: items.height, weight: items.weight, product_id: items.product_id}]
+            items:  items.map(item => ({length: item.length, width: item.width, height: item.height, weight: item.weight, product_id: item.product_id}))
           }
         ]}
     console.log(body)
@@ -180,10 +193,11 @@ const check_quote = async () => {
   }
 }
 
-// const genarray = () => {
-//   for(let i=0;i<itemquantity;i++){
-//     items.value.push({length: 25, width: 15, height: 15, weight: 1.6, product_id})
-//   }
-//   console.log(items.value)
-// }
+const addPackage = () => {
+  items.push({length: 0, width: 0, height: 0, weight: 0, product_id: ''});
+}
+
+const delPackage = (index) => {
+  items.splice(index,1);
+}
 </script>
