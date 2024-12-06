@@ -18,20 +18,20 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/staging/': {
+      '/Shippit-Black-Ops/staging/': {
         target: 'https://app.staging.shippit.com/api/3',
         changeOrigin: true,
-        rewrite: path => path.replace('/staging','')
+        rewrite: path => path.replace('/Shippit-Black-Ops/staging','')
       },
-      '/production/': {
+      '/Shippit-Black-Ops/production/': {
         target: 'https://app.shippit.com/api/3',
         changeOrigin: true,
-        rewrite: path => path.replace('/production','')
+        rewrite: path => path.replace('/Shippit-Black-Ops/production','')
       },
-      '/auspost/': {
+      '/Shippit-Black-Ops/auspost/': {
         target: 'https://digitalapi.auspost.com.au',
         changeOrigin: true,
-        rewrite: path => path.replace('/auspost','')
+        rewrite: path => path.replace('/Shippit-Black-Ops/auspost','')
       }
     }
   }

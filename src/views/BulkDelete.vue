@@ -164,7 +164,7 @@ const tableHeaders = [
 
 const check_merchant = async () => {
   if (environment.value && apiKey.value) {
-    const response = await fetch(`${environment.value}/merchant`, {
+    const response = await fetch(`/Shippit-Black-Ops/${environment.value}/merchant`, {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -176,7 +176,6 @@ const check_merchant = async () => {
     }).then((res) => res.json())
     merchant_info = response.response
     showStoreDetails.value = true
-    console.log(merchant_info)
   } else {
     SnackBarErrorMessage.value = 'Please select the environment or add the API key!'
     snackbar.value = true
@@ -185,7 +184,7 @@ const check_merchant = async () => {
 
 const deleteOrder = async(item) => {
   if (environment.value && apiKey.value) {
-    const request = await fetch(`${environment.value}/orders/${item.order}`, {
+    const request = await fetch(`/Shippit-Black-Ops/${environment.value}/orders/${item.order}`, {
     method: 'DELETE',
     mode: 'cors',
     headers: {
