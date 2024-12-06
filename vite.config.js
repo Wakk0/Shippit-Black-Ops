@@ -20,8 +20,8 @@ export default defineConfig({
     proxy: {
       '/Shippit-Black-Ops/staging/': {
         target: 'https://app.staging.shippit.com/api/3',
-        changeOrigin: true,
-        rewrite: path => path.replace('/Shippit-Black-Ops/staging','')
+        changeOrigin: true
+        // rewrite: path => path.replace('/Shippit-Black-Ops/staging','')
       },
       '/Shippit-Black-Ops/production/': {
         target: 'https://app.shippit.com/api/3',
