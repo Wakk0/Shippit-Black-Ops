@@ -164,7 +164,7 @@ const tableHeaders = [
 
 const check_merchant = async () => {
   if (environment.value && apiKey.value) {
-    const response = await fetch(`/Shippit-Black-Ops/${environment.value}/merchant`, {
+    const response = await fetch(`${environment.value}/merchant`, {
       method: 'GET',
       mode: 'cors',
       headers: {
