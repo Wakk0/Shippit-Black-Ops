@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/Shippit-Black-Ops/staging/': {
+      '/staging/': {
         target: 'https://app.staging.shippit.com/api/3',
         changeOrigin: true,
         rewrite: path => path.replace('/staging','')

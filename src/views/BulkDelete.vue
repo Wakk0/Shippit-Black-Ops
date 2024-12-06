@@ -185,7 +185,7 @@ const check_merchant = async () => {
 
 const deleteOrder = async(item) => {
   if (environment.value && apiKey.value) {
-    const request = await fetch(`/Shippit-Black-Ops/${environment.value}/orders/${item.order}`, {
+    const request = await fetch(`${environment.value}/orders/${item.order}`, {
     method: 'DELETE',
     mode: 'cors',
     headers: {
